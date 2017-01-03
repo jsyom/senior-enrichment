@@ -8,10 +8,11 @@ const INITIAL_STATE = {
 };
 
 export default function (state = INITIAL_STATE, action) {
+  const newState = Object.assign({}, state)
   switch (action.type){
     case FETCH_STUDENT:
-      return { ...state, allStudents: action.payload.data};
+      newState.allStudents = action.payload.data
+      return newState;
     default: return state;
   }
 }
-

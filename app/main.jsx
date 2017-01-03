@@ -9,14 +9,19 @@ import CampusList from './components/CampusList';
 import promise from 'redux-promise';
 import newStudent from './components/newStudent.js';
 import About from './components/about.js';
+import StudentList from './components/StudentList.js';
+import singleCampus from './components/singleCampus';
 
 ReactDOM.render(
   <Provider store={store}>
     <Router history={browserHistory}>
       <Route path="/" component={Root}>
         <IndexRoute component={ CampusList } />
+        <Route path="campus" component={ CampusList } />
+        <Route path="campus/:id" component={singleCampus} />
         <Route path="newStudent" component={newStudent} />
-        <Route path="/about" component={About} />
+        <Route path="about" component={About} />
+        <Route path="students" component={StudentList} />
       </Route>
     </Router>
   </Provider>,

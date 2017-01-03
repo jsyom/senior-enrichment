@@ -4,6 +4,7 @@ import axios from 'axios';
 export const CREATE_STUDENT = 'CREATE_STUDENT';
 export const FETCH_STUDENT = 'FETCH_STUDENT';
 export const CREATE_CAMPUS = 'CREATE_CAMPUS';
+export const FETCH_CAMPUS = 'FETCH_CAMPUS';
 
 export function fetchStudent () {
   const request = axios.get('/api/students')
@@ -21,3 +22,10 @@ export function createStudent () {
   }
 }
 
+export function fetchCampus () {
+  const request = axios.get('/api/campuses')
+  return {
+    type: FETCH_CAMPUS,
+    payload: request
+  }
+}
