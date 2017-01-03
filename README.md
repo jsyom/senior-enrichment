@@ -30,7 +30,7 @@ Use at least sequelize, express, react, and redux when creating this app. You ca
 - Campuses
   * have info such as a name and image
   * can have many students assigned (may have none)
-  
+
 ### Views and Functionality
 
 - Navigation: as a user I...
@@ -59,7 +59,7 @@ Use at least sequelize, express, react, and redux when creating this app. You ca
 ### Routes
 
 ```
-GET 
+GET
 - all campuses
 - a campus by id
 - all students
