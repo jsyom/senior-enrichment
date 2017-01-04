@@ -10,6 +10,7 @@ class StudentList extends Component {
   }
 
   renderStudents() {
+    const { students, campuses } = this.props;
     return this.props.allStudents.map((student)=> {
       return (
         <li className="list-group-item" key={student.id}>
@@ -19,7 +20,6 @@ class StudentList extends Component {
       )
     })
   }
-
 
   render() {
     const fetchStudent = this.props;
@@ -32,8 +32,13 @@ class StudentList extends Component {
     )
   }
 }
-function mapStateToProps(state) {
-  return { allStudents: state.students.allStudents }
+function mapStateToProps(state, ownProps) {
+  console.log("~~~~~~~~~~~~~", ownProps)
+  const campusId = Number(ownProps.campusId);
+  function findByCampusId(student){
+    return !campusId ? true : student.campusId === campusId
+  }
+  return { allStudents: state.students.allStudents.filter(findByCampusId) }
 }
 function mapDispatchToProps(dispatch) {
   return bindActionCreators({ fetchStudent }, dispatch)

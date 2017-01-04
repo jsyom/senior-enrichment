@@ -1,4 +1,4 @@
-'use strict';
+/*'use strict';
 import React, { Component } from 'react';
 import { reduxForm } from 'redux-form';
 
@@ -6,11 +6,8 @@ import { reduxForm } from 'redux-form';
 class newCampusPost extends Component {
 
   render(){
-
-    const { fields:{ name, image }, handleSubmit } = this.props;
-    console.log(name);
     return (
-      <form onSubmit={handleSubmit}>
+      <form>
         <h3> CREATE A NEW Campus</h3>
 
         <div className="form-group">
@@ -44,3 +41,4 @@ export default reduxForm({
   form: 'newCampusForm',
   fields: ['name', 'image']
 })(newCampusPost);
+*/

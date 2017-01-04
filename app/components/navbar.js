@@ -10,13 +10,20 @@ export default function () {
             <ul className="nav navbar-nav" >
               <li><Link to="/">Home</Link></li>
               <li><Link to="/about">About</Link></li>
-              <li><a href="#">Contact</a></li>
             </ul>
           </div>
           <div className="navbar-header">
+            <Link to="/">
               <a href="#" className="navbar-brand">The Margaret Hamilton Interplanetary Academy of Javascript</a>
+            </Link>
           </div>
           <ul className="nav navbar-nav">
+            <li>
+              <Link to="/students">Students</Link>
+            </li>
+            <li>
+              <Link to="/campus">Campus</Link>
+            </li>
             <li>
               <Link to="/newStudent">Create a Student</Link>
             </li>

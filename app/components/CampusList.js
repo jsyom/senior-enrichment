@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { fetchCampus } from '../actions/index.js';
+import { Link } from 'react-router';
 
 class CampusList extends Component {
   componentWillMount() {
@@ -13,12 +14,14 @@ class CampusList extends Component {
     return this.props.allCampus.map((campus)=> {
       return (
         <li className="list-group-item" key={campus.id}>
-          <strong>{campus.name}</strong>
-          <img src={campus.image}
-           className="img-fluid"
-           width="200"
-           height="200"
-           alt="Responsive image"/>
+          <Link to={"campus/" + campus.id}>
+            <strong>{campus.name}</strong>
+            <img src={campus.image}
+             className="img-fluid"
+             width="200"
+             height="200"
+             alt="Responsive image"/>
+          </Link>
         </li>
       )
     })
@@ -42,7 +45,7 @@ class CampusList extends Component {
   }
 }
 function mapStateToProps(state) {
-  return { allCampus: state.campuses.allCampus }
+  return { allCampus: state.campuses.allCampus, allStudents: state.students.allStudents }
 }
 function mapDispatchToProps(dispatch) {
   return bindActionCreators({ fetchCampus }, dispatch)

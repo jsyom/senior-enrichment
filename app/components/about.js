@@ -10,7 +10,10 @@ class About extends Component {
         The Margaret Hamilton Interplanetary Academy of Javascript
       </div>
       <div>
-        Founded in 2101
+        12 Jupiter Lane, Jupiter, New America, New New York, 11005112
+      </div>
+      <div>
+        Founded in Year 22110
       </div>
     </div>
     )

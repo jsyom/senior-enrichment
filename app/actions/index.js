@@ -1,10 +1,12 @@
 'use strict';
 import axios from 'axios';
 
-export const CREATE_STUDENT = 'CREATE_STUDENT';
 export const FETCH_STUDENT = 'FETCH_STUDENT';
-export const CREATE_CAMPUS = 'CREATE_CAMPUS';
+export const FETCH_SINGLE_STUDENT = 'FETCH_SINGLE_STUDENT'
+export const CREATE_STUDENT = 'CREATE_STUDENT';
 export const FETCH_CAMPUS = 'FETCH_CAMPUS';
+export const CREATE_CAMPUS = 'CREATE_CAMPUS';
+export const FETCH_SINGLE_CAMPUS = 'FETCH_SINGLE_CAMPUS';
 
 export function fetchStudent () {
   const request = axios.get('/api/students')
@@ -14,8 +16,8 @@ export function fetchStudent () {
   }
 }
 
-export function createStudent () {
-  const request = axios.post('/api/students')
+export function createStudent (props) {
+  const request = axios.post('/api/students', props)
   return {
     type: CREATE_STUDENT,
     payload: request
@@ -26,6 +28,22 @@ export function fetchCampus () {
   const request = axios.get('/api/campuses')
   return {
     type: FETCH_CAMPUS,
+    payload: request
+  }
+}
+
+export function createCampus () {
+  const request = axios.post('/api/campuses')
+  return {
+    type: CREATE_CAMPUS,
+    payload: request
+  }
+}
+
+export function fetchSingleCampus (id) {
+  const request = axios.get(`/api/campuses/${id}`)
+  return {
+    type: FETCH_SINGLE_CAMPUS,
     payload: request
   }
 }
