@@ -33,7 +33,6 @@ class StudentList extends Component {
   }
 }
 function mapStateToProps(state, ownProps) {
-  console.log("~~~~~~~~~~~~~", ownProps)
   const campusId = Number(ownProps.campusId);
   function findByCampusId(student){
     return !campusId ? true : student.campusId === campusId

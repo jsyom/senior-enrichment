@@ -28,7 +28,7 @@ export default function () {
               <Link to="/newStudent">Create a Student</Link>
             </li>
             <li>
-              <Link to="/newStudent">Create a Campus</Link>
+              <Link to="/newCampus">Create a Campus</Link>
             </li>
           </ul>
         </div>

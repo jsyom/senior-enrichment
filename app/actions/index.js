@@ -32,8 +32,8 @@ export function fetchCampus () {
   }
 }
 
-export function createCampus () {
-  const request = axios.post('/api/campuses')
+export function createCampus (props) {
+  const request = axios.post('/api/campuses', props)
   return {
     type: CREATE_CAMPUS,
     payload: request
