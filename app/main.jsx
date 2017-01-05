@@ -12,6 +12,7 @@ import About from './components/about.js';
 import StudentList from './components/StudentList.js';
 import SingleCampus from './components/singleCampus.js';
 import newCampusPost from './components/newCampus.js';
+import SingleStudent from './components/singleStudent.js';
 
 ReactDOM.render(
   <Provider store={store}>
@@ -24,8 +25,9 @@ ReactDOM.render(
         <Route path="students" component={StudentList} />
         <Route path="newStudent" component={NewStudentPost} />
         <route path="newCampus" component={newCampusPost} />
+        <route path="students/:id" component={SingleStudent} />
       </Route>
     </Router>
   </Provider>,
   document.getElementById('main')
-)
+);

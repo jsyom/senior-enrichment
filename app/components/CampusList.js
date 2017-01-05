@@ -19,8 +19,7 @@ class CampusList extends Component {
             <img src={campus.image}
              className="img-fluid"
              width="200"
-             height="200"
-             alt="Responsive image"/>
+             height="200"/>
           </Link>
         </li>
       )

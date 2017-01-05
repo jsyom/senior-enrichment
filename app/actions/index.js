@@ -7,6 +7,8 @@ export const CREATE_STUDENT = 'CREATE_STUDENT';
 export const FETCH_CAMPUS = 'FETCH_CAMPUS';
 export const CREATE_CAMPUS = 'CREATE_CAMPUS';
 export const FETCH_SINGLE_CAMPUS = 'FETCH_SINGLE_CAMPUS';
+export const DELETE_STUDENT = 'DELETE_STUDENT';
+
 
 export function fetchStudent () {
   const request = axios.get('/api/students')
@@ -46,4 +48,20 @@ export function fetchSingleCampus (id) {
     type: FETCH_SINGLE_CAMPUS,
     payload: request
   }
+}
+
+export function fetchSingleStudent(id) {
+  const request = axios.get(`/api/students/${id}`)
+  return {
+    type: FETCH_SINGLE_STUDENT,
+    payload: request
+  }
+}
+
+export function deleteStudent(id){
+  request = axios.delete(`/api/students/${id}`)
+  return {
+    type: DELETE_STUDENT,
+    request
+  };
 }
