@@ -12,19 +12,21 @@ var Student = db.define('student', {
       isEmail: true
     }
   }
-},{
-  defaultScope: {
-    attributes: {
-      include: ['campusId'],
-    },
-  },
-  scopes: {
-    populated: () => ({
-      include: [{
-        model: db.model('campus')
-      }]
-    })
-  }
-})
+}
+// ,{
+//   defaultScope: {
+//     attributes: {
+//       include: ['campusId'],
+//     },
+//   },
+//   scopes: {
+//     populated: () => ({
+//       include: [{
+//         model: db.model('campus')
+//       }]
+//     })
+//   }
+// }
+)
 
 module.exports = Student;
