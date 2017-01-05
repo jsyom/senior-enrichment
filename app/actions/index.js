@@ -8,6 +8,7 @@ export const FETCH_CAMPUS = 'FETCH_CAMPUS';
 export const CREATE_CAMPUS = 'CREATE_CAMPUS';
 export const FETCH_SINGLE_CAMPUS = 'FETCH_SINGLE_CAMPUS';
 export const DELETE_STUDENT = 'DELETE_STUDENT';
+export const DELETE_CAMPUS = 'DELETE_CAMPUS';
 
 
 export function fetchStudent () {
@@ -64,4 +65,12 @@ export function deleteStudent(id){
     type: DELETE_STUDENT,
     request
   };
+}
+
+export function deleteCampus(id){
+  request = axios.delete(`/api/campuses/${id}`)
+  return {
+    type: DELETE_CAMPUS,
+    request
+  }
 }

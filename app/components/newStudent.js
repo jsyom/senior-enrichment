@@ -14,7 +14,7 @@ class CreateNewStudent extends Component {
 
         <div className={`form-group ${name.touched && name.invalid ? 'has-danger' : ''}`}>
           <label>name</label>
-          <input type="text" className="form-control" {...name} />
+          <input type="text" className="form-control col-md-10" {...name} />
           <div className="text-help">
             {name.touched ? name.error : ''}
           </div>
