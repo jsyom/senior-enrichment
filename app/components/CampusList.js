@@ -14,7 +14,7 @@ class CampusList extends Component {
   renderCampuses() {
     return this.props.allCampus.map((campus)=> {
       return (
-            <Link to={"campus/" + campus.id}>
+            <Link to={"campus/" + campus.id} key={campus.id}>
            <li className="list-group" key={campus.id}>
             <strong>{campus.name}</strong>
             <img src={campus.image}
@@ -36,7 +36,7 @@ class CampusList extends Component {
        <h2 className="text-center">
          List of Margaret Hamilton Interplanetary Academy of Javascript Campuses
        </h2>
-      <div className="row-group">
+      <div className="row">
       <div className="col-xs-4 col-lg-4">
        <div className="thumnail">
          <ul className="list-group-item">
