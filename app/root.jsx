@@ -10,9 +10,10 @@ export default class Root extends Component {
     return (
       <div>
         <Home />
-        {this.props.children  && React.cloneElement(this.props.children, this.props)}
+        {this.props.children}
       </div>
     )
   }
 };
 
+        // {this.props.children  && React.cloneElement(this.props.children, this.props)}

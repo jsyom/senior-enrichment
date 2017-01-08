@@ -6,7 +6,7 @@ import { fetchCampus } from '../actions/index.js';
 import { Link } from 'react-router';
 
 class CampusList extends Component {
-  componentWillMount() {
+  componentDidMount() {
     this.props.fetchCampus();
   }
 

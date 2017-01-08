@@ -7,7 +7,7 @@ import StudentList from './StudentList.js';
 
 class SingleStudent extends Component {
 
-  componentWillMount(){
+  componentDidMount(){
     this.props.fetchSingleStudent(this.props.params.id);
   }
 

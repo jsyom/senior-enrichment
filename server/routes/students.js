@@ -1,6 +1,7 @@
 'use strict';
 const api = require('express').Router()
 const Student = require('../../db/models').Student;
+const Campus = require('../../db/models').Campus
 
 api.get('/', (req, res, next) => {
   Student.findAll()
@@ -18,14 +19,17 @@ api.get('/:studentId', (req, res, next) => {
     .catch(next)
 });
 
-
 api.post('/', (req, res, next) => {
   Student.create(req.body)
     .then(createdStudent => {
-      res.send(createdStudent)
+      return createdStudent.setCampus(+req.params.id)
+    })
+    .then(newStudent => {
+      res.status(201).json(newStudent)
     })
     .catch(next)
 });
+
 
 api.put('/:studentId', (req, res, next) => {
   Student.update(req.body, {

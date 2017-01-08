@@ -1,5 +1,6 @@
 const api = require('express').Router()
 const Campus = require('../../db/models').Campus;
+const Student = require('../../db/models').Student;
 
 api.get('/', (req, res, next) => {
   Campus.findAll()
@@ -21,7 +22,18 @@ api.get('/:campusId', (req, res, next) => {
 api.post('/', (req, res, next) => {
   Campus.create(req.body)
     .then(newCreatedCampus => {
-      res.send(newCreatedCampus)
+      res.status(201).json(newCreatedCampus)
+    })
+    .catch(next)
+});
+
+api.post('/:campusId/students', (req, res, next) => {
+  Student.create(req.body)
+    .then(createdStudent => {
+      return createdStudent.setCampus(+req.params.campusId)
+    })
+    .then(newStudent => {
+      res.status(201).json(newStudent)
     })
     .catch(next)
 });
@@ -39,6 +51,8 @@ api.put('/:campusId', (req, res, next) => {
   })
   .catch(next)
 });
+
+
 
 api.delete('/:campusId', (req, res, next) => {
   Campus.destroy({

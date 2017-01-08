@@ -6,7 +6,7 @@ import { bindActionCreators } from 'redux';
 import { fetchStudent } from '../actions/index.js';
 
 class StudentList extends Component {
-  componentWillMount() {
+  componentDidMount() {
     this.props.fetchStudent();
   }
 

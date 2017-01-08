@@ -21,6 +21,7 @@ ReactDOM.render(
         <IndexRoute component={ CampusList } />
         <Route path="campus" component={ CampusList } />
         <Route path="campus/:id" component={SingleCampus} />
+        <Route path="campus/:id/students" component={NewStudentPost}/>
         <Route path="about" component={About} />
         <Route path="students" component={StudentList} />
         <Route path="newStudent" component={NewStudentPost} />

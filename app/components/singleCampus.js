@@ -3,18 +3,23 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router';
-import { fetchSingleCampus, deleteCampus } from '../actions/index';
+import { fetchSingleCampus, deleteCampus, createStudent } from '../actions/index';
 import StudentList from './StudentList.js';
 
 
 class SingleCampus extends Component {
-  componentWillMount(){
+  componentDidMount(){
     this.props.fetchSingleCampus(this.props.params.id);
   }
 
   onDeleteClick(){
     this.props.deleteCampus(this.props.params.id)
   }
+
+  onCreateClick(){
+    this.props.createStudent(this.props.params.id)
+  }
+
   render() {
     const { campus, students } = this.props;
     if(!this.props.campus){
@@ -23,6 +28,8 @@ class SingleCampus extends Component {
     return (
       <div className="row-fluid">
       <Link to="/">Link Back</Link>
+      <Link to={`/campus/${campus.id}/students`}>Create a Student</Link>
+      <button className="btn btn-primary pull-right" onClick={this.onCreateClick.bind(this)}>CREATE STUDENT</button>
       <button className="btn btn-danger pull-right" onClick={this.onDeleteClick.bind(this)} >DELETE CAMPUS</button>
           <h3>
             {campus.name}
@@ -44,4 +51,4 @@ function mapStateToProps(state){
   }
 }
 
-export default connect(mapStateToProps, { fetchSingleCampus, deleteCampus })(SingleCampus);
+export default connect(mapStateToProps, { fetchSingleCampus, deleteCampus, createStudent })(SingleCampus);

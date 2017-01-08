@@ -20,7 +20,8 @@ export function fetchStudent () {
 }
 
 export function createStudent (props) {
-  const request = axios.post('/api/students', props)
+  const id =  console.log("~~~~~~~~", props.campus)
+  const request = axios.post(`/api/campuses/${props.campus}/students`, props)
   return {
     type: CREATE_STUDENT,
     payload: request

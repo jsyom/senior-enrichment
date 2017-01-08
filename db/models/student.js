@@ -2,6 +2,7 @@
 var Sequelize = require('sequelize')
 var db = require('../index.js')
 
+
 var Student = db.define('student', {
   name: {
     type: Sequelize.STRING
@@ -12,7 +13,7 @@ var Student = db.define('student', {
       isEmail: true
     }
   }
-}
+})
 // ,{
 //   defaultScope: {
 //     attributes: {
@@ -27,6 +28,5 @@ var Student = db.define('student', {
 //     })
 //   }
 // }
-)
 
 module.exports = Student;
