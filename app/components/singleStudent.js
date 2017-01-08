@@ -27,12 +27,14 @@ class SingleStudent extends Component {
         onClick={this.onDeleteClick.bind(this)}>
         Delete Student
         </button>
-          <h3>
-            {student.name}
-          </h3>
-          <h2>
-            {student.email}
-          </h2>
+          <div className="col-6">
+            <h3>
+              {student.name}
+            </h3>
+            <h2>
+              {student.email}
+            </h2>
+           </div>
       </div>
     );
   }

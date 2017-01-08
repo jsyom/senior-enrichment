@@ -27,7 +27,7 @@ class StudentList extends Component {
   render() {
     const fetchStudent = this.props;
     return (
-      <div className="col-md-10">
+      <div className="col-md-8">
         <ul className="list-group">
           {this.renderStudents()}
         </ul>

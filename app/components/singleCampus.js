@@ -21,25 +21,27 @@ class SingleCampus extends Component {
   }
 
   render() {
+    console.log("~~~~~~~~~~~~~~~~~~this.props", this.props);
+    console.log("~~~~~~~~~~~~~~~this.state", this.state);
     const { campus, students } = this.props;
     if(!this.props.campus){
       return <div>LOADING...</div>
     }
     return (
       <div className="row-fluid">
-      <Link to="/">Link Back</Link>
-      <Link to={`/campus/${campus.id}/students`}>Create a Student</Link>
-      <button className="btn btn-primary pull-right" onClick={this.onCreateClick.bind(this)}>CREATE STUDENT</button>
-      <button className="btn btn-danger pull-right" onClick={this.onDeleteClick.bind(this)} >DELETE CAMPUS</button>
-          <h3>
-            {campus.name}
-          </h3>
-          <img src={campus.image}
-          className="img-fluid"
-          alt="Responsive image"
-          width="200"
-          height="200"/>
-          <StudentList students={students} campusId={campus.id} />
+        <Link to="/">Link Back</Link>
+        <Link to={`/campus/${campus.id}/students`}>Create a Student</Link>
+
+        <button className="btn btn-danger pull-right" onClick={this.onDeleteClick.bind(this)} >DELETE CAMPUS</button>
+            <h3>
+              {campus.name}
+            </h3>
+            <img src={campus.image}
+            className="img-fluid"
+            alt="Responsive image"
+            width="200"
+            height="200"/>
+            <StudentList students={students} campusId={campus.id} />
       </div>
     );
   }
