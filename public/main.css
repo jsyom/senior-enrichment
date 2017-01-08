@@ -13,7 +13,7 @@
 
 .item.list-group-item
 {
-    float: none;
+    float: left;
     width: 100%;
     background-color: #fff;
     margin-bottom: 10px;
@@ -25,7 +25,8 @@
 
 .item.list-group-item .list-group-image
 {
-    margin-right: 10px;
+    margin-left: 20px;
+    margin-right: 20px;
 }
 .item.list-group-item .thumbnail
 {
@@ -56,5 +57,5 @@
 }
 .list-group-item-text
 {
-    margin: 0 0 11px;
+    margin: 20 20 11px;
 }

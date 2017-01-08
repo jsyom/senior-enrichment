@@ -16,10 +16,6 @@ class SingleCampus extends Component {
     this.props.deleteCampus(this.props.params.id)
   }
 
-  onCreateClick(){
-    this.props.createStudent(this.props.params.id)
-  }
-
   render() {
     console.log("~~~~~~~~~~~~~~~~~~this.props", this.props);
     console.log("~~~~~~~~~~~~~~~this.state", this.state);
@@ -30,7 +26,7 @@ class SingleCampus extends Component {
     return (
       <div className="row-fluid">
         <Link to="/">Link Back</Link>
-        <Link to={`/campus/${campus.id}/students`}>Create a Student</Link>
+        <Link to={`/campus/${campus.id}/students`}><button className="btn btn-primary pull-right">CREATE STUDENT</button></Link>
 
         <button className="btn btn-danger pull-right" onClick={this.onDeleteClick.bind(this)} >DELETE CAMPUS</button>
             <h3>

@@ -14,15 +14,15 @@ class CampusList extends Component {
   renderCampuses() {
     return this.props.allCampus.map((campus)=> {
       return (
-            <Link to={"campus/" + campus.id} key={campus.id}>
-           <li className="list-group" key={campus.id}>
-            <strong>{campus.name}</strong>
+        <li className="list-group-item col-lg-4" key={campus.id}>
+          <Link to={"campus/" + campus.id}>
             <img src={campus.image}
              className="img-fluid"
              width="200"
              height="200"/>
-          </li>
-            </Link>
+            <label>{campus.name}</label>
+          </Link>
+        </li>
       );
     })
   }
@@ -32,18 +32,14 @@ class CampusList extends Component {
       const renderCampuses = this.props;
 
     return (
-      <div className="container-fluid">
+      <div>
        <h2 className="text-center">
          List of Margaret Hamilton Interplanetary Academy of Javascript Campuses
        </h2>
-      <div className="row">
-      <div className="col-xs-4 col-lg-4">
-       <div className="thumnail">
-         <ul className="list-group-item">
+      <div className="container-fluid">
+         <ul className="row-fluid list-group">
             {this.renderCampuses()}
          </ul>
-      </div>
-      </div>
       </div>
     </div>
     );
