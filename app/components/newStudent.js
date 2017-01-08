@@ -32,7 +32,7 @@ class CreateNewStudent extends Component {
 
         <div className={`form-group ${campus.touched && campus.invalid ? 'has-danger' : ''}`}>
           <label>Campus</label>
-            <select className="form-control" {...campus}>
+            <select className="form-control" placeholder="pick a campus" {...campus}>
               {this.renderCampuses()}
             </select>
           <div className="text-help">
@@ -43,7 +43,7 @@ class CreateNewStudent extends Component {
 
         <div className={`form-group ${name.touched && name.invalid ? 'has-danger' : ''}`}>
           <label>name</label>
-          <input type="text" className="form-control col-md-10" {...name} />
+          <input type="text" className="form-control col-lg-6" {...name} />
           <div className="text-help">
             {name.touched ? name.error : ''}
           </div>
@@ -51,7 +51,7 @@ class CreateNewStudent extends Component {
 
         <div className={`form-group ${email.touched && email.invalid ? 'has-danger' : ''}`}>
           <label>email</label>
-          <input type="text" className="form-control" {...email} />
+          <input type="text" className="form-control col-lg-6" {...email} />
           <div className="text-help">
             {email.touched ? email.error : ''}
           </div>

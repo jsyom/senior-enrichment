@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { fetchSingleStudent, deleteStudent } from '../actions/index';
+import { fetchSingleStudent, deleteStudent, fetchSingleCampus } from '../actions/index';
 import { Link } from 'react-router';
 import StudentList from './StudentList.js';
 
@@ -9,6 +9,7 @@ class SingleStudent extends Component {
 
   componentDidMount(){
     this.props.fetchSingleStudent(this.props.params.id);
+    this.props.fetchSingleCampus(this.props.campus.id);
   }
 
   onDeleteClick(){
@@ -17,6 +18,10 @@ class SingleStudent extends Component {
 
   render() {
     const { campus, student } = this.props;
+    console.log("~~~~~~~~~~~THIS.STATE", this.state);
+    console.log("~~~~~~~~~~~THIS.PROPS", this.props);
+    console.log("~~~~~~~~~~~PROPS", this.props.campus);
+
     if(!this.props.student){
       return <div>LOADING...</div>
     }
@@ -28,13 +33,19 @@ class SingleStudent extends Component {
         Delete Student
         </button>
           <div className="col-6">
-            <h3>
-              {student.name}
-            </h3>
-            <h2>
-              {student.email}
-            </h2>
-           </div>
+            <div>
+              <label>Name: </label>
+                {student.name}
+            </div>
+            <div>
+              <label>Email: </label>
+                {student.email}
+            </div>
+            <div>
+              <label>Campus: </label>
+              {campus.name}
+            </div>
+          </div>
       </div>
     );
   }
@@ -42,8 +53,9 @@ class SingleStudent extends Component {
 
 function mapStateToProps(state){
   return {
-    student: state.students.students
+    student: state.students.students,
+    campus: state.campuses.campus
   }
 }
 
-export default connect(mapStateToProps, { fetchSingleStudent, deleteStudent })(SingleStudent);
+export default connect(mapStateToProps, { fetchSingleStudent, deleteStudent, fetchSingleCampus })(SingleStudent);
